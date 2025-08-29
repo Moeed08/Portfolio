@@ -4,6 +4,27 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Calendar, MapPin, Award, ExternalLink } from 'lucide-react';
 
+interface Education {
+  degree: string;
+  institution: string;
+  location: string;
+  period: string;
+  type: string;
+  description: string;
+  achievements: string[];
+  relevantCourses: string[];
+  website: string;
+}
+
+interface Certification {
+  title: string;
+  issuer: string;
+  date: string;
+  type: string;
+  description: string;
+  skills: string[];
+}
+
 const EducationSection: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -72,7 +93,7 @@ const EducationSection: React.FC = () => {
     }
   ];
 
-  const EducationCard: React.FC<{ education: any; index: number }> = ({ education, index }) => (
+  const EducationCard: React.FC<{ education: Education; index: number }> = ({ education }) => (
     <motion.div
       variants={itemVariants}
       className="relative bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
@@ -163,7 +184,7 @@ const EducationSection: React.FC = () => {
     </motion.div>
   );
 
-  const CertificationCard: React.FC<{ cert: any; index: number }> = ({ cert, index }) => (
+  const CertificationCard: React.FC<{ cert: Certification; index: number }> = ({ cert }) => (
     <motion.div
       variants={itemVariants}
       className="bg-white dark:bg-gray-900 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700"

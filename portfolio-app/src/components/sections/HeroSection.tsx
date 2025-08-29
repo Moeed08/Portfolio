@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react';
 import Button from '../ui/Button';
-import PlaceholderImage from '../ui/PlaceholderImage';
+import Image from 'next/image';
 
 const HeroSection: React.FC = () => {
   const containerVariants = {
@@ -64,9 +64,11 @@ const HeroSection: React.FC = () => {
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               />
               <div className="absolute inset-2 bg-white dark:bg-gray-800 rounded-full overflow-hidden">
-                <img
+                <Image
                   src="/my_image.jpg"
                   alt="Muhammad Moeed Asif - AI/ML Engineer"
+                  width={200}
+                  height={200}
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>

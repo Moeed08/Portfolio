@@ -4,6 +4,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
 
+interface Experience {
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  type: string;
+  description: string;
+  achievements: string[];
+  technologies: string[];
+  website: string;
+}
+
 const ExperienceSection: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -78,7 +90,7 @@ const ExperienceSection: React.FC = () => {
     }
   ];
 
-  const ExperienceCard: React.FC<{ experience: any; index: number }> = ({ experience, index }) => (
+  const ExperienceCard: React.FC<{ experience: Experience; index: number }> = ({ experience }) => (
     <motion.div
       variants={itemVariants}
       className="relative bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
@@ -215,8 +227,8 @@ const ExperienceSection: React.FC = () => {
           >
             <h3 className="text-2xl font-bold mb-4">Ready to Work Together?</h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities and exciting projects. 
-              Let's create something amazing together!
+              I&apos;m always open to discussing new opportunities and exciting projects. 
+              Let&apos;s create something amazing together!
             </p>
             <motion.a
               href="#contact"

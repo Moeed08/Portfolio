@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Palette, Zap, Heart } from 'lucide-react';
-import PlaceholderImage from '../ui/PlaceholderImage';
+import Image from 'next/image';
 
 const AboutSection: React.FC = () => {
   const containerVariants = {
@@ -86,9 +86,11 @@ const AboutSection: React.FC = () => {
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                   />
                   <div className="absolute inset-4 bg-white dark:bg-gray-800 rounded-2xl overflow-hidden">
-                    <img
+                    <Image
                       src="/my_image.jpg"
                       alt="Muhammad Moeed Asif - AI/ML Engineer"
+                      width={400}
+                      height={400}
                       className="w-full h-full object-cover rounded-2xl"
                     />
                   </div>
@@ -126,18 +128,18 @@ const AboutSection: React.FC = () => {
             <motion.div variants={itemVariants} className="space-y-6">
               <div className="prose prose-lg dark:prose-invert max-w-none">
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Hi! I'm Muhammad Moeed Asif, an AI Engineer with hands-on experience in developing 
-                  machine learning models and AI solutions. I'm skilled in Python, TensorFlow, PyTorch, 
+                  Hi! I&apos;m Muhammad Moeed Asif, an AI Engineer with hands-on experience in developing 
+                  machine learning models and AI solutions. I&apos;m skilled in Python, TensorFlow, PyTorch, 
                   and generative AI technologies including LLMs and computer vision.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   I have demonstrated success in building scalable AI systems, voice assistants, and 
-                  automated solutions. I'm familiar with cloud platforms (AWS, Azure) and MLOps practices, 
+                  automated solutions. I&apos;m familiar with cloud platforms (AWS, Azure) and MLOps practices, 
                   and I specialize in NLP, Generative AI, Agentic AI, and LLMs.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   Currently working at MTBC CareCloud as a Junior AI Engineer, I lead R&D on Agentic and 
-                  Generative AI solutions, boosting healthcare product efficiency by 80%. I'm passionate 
+                  Generative AI solutions, boosting healthcare product efficiency by 80%. I&apos;m passionate 
                   about creating AI solutions that solve real-world problems in healthcare and beyond.
                 </p>
               </div>

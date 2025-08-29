@@ -3,6 +3,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+interface Skill {
+  name: string;
+  level: number;
+  color: string;
+}
+
+interface SkillCategory {
+  title: string;
+  skills: Skill[];
+}
+
 const SkillsSection: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -59,7 +70,7 @@ const SkillsSection: React.FC = () => {
     }
   ];
 
-  const SkillBar: React.FC<{ skill: any; index: number }> = ({ skill, index }) => (
+  const SkillBar: React.FC<{ skill: Skill; index: number }> = ({ skill, index }) => (
     <motion.div
       className="mb-6"
       initial={{ opacity: 0, x: -20 }}

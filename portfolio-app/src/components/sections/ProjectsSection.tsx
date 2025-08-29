@@ -6,6 +6,18 @@ import { ExternalLink, Github, Calendar, Tag } from 'lucide-react';
 import Button from '../ui/Button';
 import PlaceholderImage from '../ui/PlaceholderImage';
 
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  category: string;
+  date: string;
+  github: string;
+  live: string;
+  featured: boolean;
+}
+
 const ProjectsSection: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -98,7 +110,7 @@ const ProjectsSection: React.FC = () => {
     }
   ];
 
-  const ProjectCard: React.FC<{ project: any; index: number }> = ({ project, index }) => (
+  const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project }) => (
     <motion.div
       variants={itemVariants}
       className={`group relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${
@@ -232,7 +244,7 @@ const ProjectsSection: React.FC = () => {
               </span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Here are some of the projects I've worked on. Each one represents a unique challenge and learning experience.
+              Here are some of the projects I&apos;ve worked on. Each one represents a unique challenge and learning experience.
             </p>
           </motion.div>
 

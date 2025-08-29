@@ -104,8 +104,8 @@ const ContactSection: React.FC = () => {
               </span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Have a project in mind or just want to say hello? I'd love to hear from you. 
-              Let's start a conversation and build something amazing together.
+              Have a project in mind or just want to say hello? I&apos;d love to hear from you. 
+              Let&apos;s start a conversation and build something amazing together.
             </p>
           </motion.div>
 
@@ -114,10 +114,10 @@ const ContactSection: React.FC = () => {
             <motion.div variants={itemVariants} className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                  Let's Connect
+                  Let&apos;s Connect
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                  I'm always excited to work on new projects and collaborate with amazing people. 
+                  I&apos;m always excited to work on new projects and collaborate with amazing people. 
                   Whether you have a specific project in mind or just want to explore possibilities, 
                   feel free to reach out!
                 </p>
@@ -193,7 +193,7 @@ const ContactSection: React.FC = () => {
                     className="mb-6 p-4 bg-green-100 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-lg flex items-center space-x-2 text-green-800 dark:text-green-200"
                   >
                     <CheckCircle size={20} />
-                    <span>Message sent successfully! I'll get back to you soon.</span>
+                    <span>Message sent successfully! I&apos;ll get back to you soon.</span>
                   </motion.div>
                 )}
 

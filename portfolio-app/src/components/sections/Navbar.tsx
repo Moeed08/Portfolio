@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Moon, Sun } from 'lucide-react';
-import Button from '../ui/Button';
+import Image from 'next/image';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,9 +76,11 @@ const Navbar: React.FC = () => {
               }}
               className="flex items-center space-x-2"
             >
-              <img
+              <Image
                 src="/logo.svg"
                 alt="MA Logo"
+                width={40}
+                height={40}
                 className="w-10 h-10"
               />
               <span className="text-xl font-bold text-gray-900 dark:text-white">
