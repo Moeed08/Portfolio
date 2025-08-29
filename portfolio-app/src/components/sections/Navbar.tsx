@@ -8,7 +8,7 @@ import Image from 'next/image';
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,8 +16,11 @@ const Navbar: React.FC = () => {
     };
 
     const handleDarkMode = () => {
-      const isDark = document.documentElement.classList.contains('dark') || 
-                    window.matchMedia('(prefers-color-scheme: dark)').matches;
+      // Set dark mode by default on initial load
+      if (!document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.add('dark');
+      }
+      const isDark = document.documentElement.classList.contains('dark');
       setDarkMode(isDark);
     };
 
