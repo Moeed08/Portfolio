@@ -65,7 +65,7 @@ const HeroSection: React.FC = () => {
               />
               <div className="absolute inset-1 sm:inset-2 bg-white dark:bg-gray-800 rounded-full overflow-hidden">
                 <Image
-                  src="/my_image.jpg"
+                  src="/frontimg.jpg"
                   alt="Muhammad Moeed Asif - AI/ML Engineer"
                   width={200}
                   height={200}
