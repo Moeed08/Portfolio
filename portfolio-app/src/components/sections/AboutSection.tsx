@@ -68,10 +68,8 @@ const AboutSection: React.FC = () => {
               </span>
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4 sm:px-0 leading-relaxed">
-              AI Engineer with experience in developing machine learning models and AI solutions. Proficient in Python,
-              TensorFlow, PyTorch, and generative AI technologies including LLMs and computer vision. Proven track
-              record in building scalable AI systems, voice assistants, and automated solutions. Experienced with cloud
-              platforms (AWS, Azure) and MLOps practices.
+              AI Engineer with experience in developing machine learning models and AI solutions. Proficient in Generative AI technologies including LLMs, and Computer vision technologies. Proven track
+              record in building scalable AI systems, voice assistants, and automated solutions.
             </p>
           </motion.div>
 
@@ -140,7 +138,7 @@ const AboutSection: React.FC = () => {
                 </p>
                 <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                   Currently working at MTBC CareCloud as a Junior AI Engineer, I lead R&D on Agentic and 
-                  Generative AI solutions, boosting healthcare product efficiency by 80%. I&apos;m passionate 
+                  Generative AI solutions, boosting healthcare product efficiency by 90%. I&apos;m passionate 
                   about creating AI solutions that solve real-world problems in healthcare and beyond.
                 </p>
               </div>

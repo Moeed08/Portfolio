@@ -42,18 +42,18 @@ const SkillsSection: React.FC = () => {
       title: "AI/ML Frameworks",
       skills: [
         { name: "TensorFlow", level: 90, color: "from-orange-500 to-red-500" },
-        { name: "PyTorch", level: 85, color: "from-red-500 to-pink-500" },
+        { name: "PyTorch", level: 95, color: "from-red-500 to-pink-500" },
         { name: "Keras", level: 88, color: "from-purple-500 to-indigo-500" },
         { name: "Scikit-learn", level: 92, color: "from-blue-500 to-cyan-500" },
-        { name: "OpenAI/LLMs", level: 85, color: "from-green-500 to-emerald-500" },
+        { name: "OpenAI/LLMs", level: 95, color: "from-green-500 to-emerald-500" },
       ]
     },
     {
       title: "Programming Languages", 
       skills: [
         { name: "Python", level: 95, color: "from-green-600 to-blue-600" },
-        { name: "C/C++", level: 80, color: "from-blue-600 to-indigo-600" },
-        { name: "SQL", level: 85, color: "from-purple-500 to-pink-500" },
+        { name: "C/C++", level: 90, color: "from-blue-600 to-indigo-600" },
+        { name: "SQL", level: 90, color: "from-purple-500 to-pink-500" },
         { name: "JavaScript", level: 75, color: "from-yellow-500 to-orange-500" },
         { name: "TypeScript", level: 70, color: "from-blue-600 to-blue-700" },
       ]
@@ -61,11 +61,11 @@ const SkillsSection: React.FC = () => {
     {
       title: "Cloud & DevOps",
       skills: [
-        { name: "AWS", level: 82, color: "from-orange-500 to-yellow-500" },
-        { name: "Docker", level: 78, color: "from-blue-500 to-blue-600" },
-        { name: "Git/GitHub", level: 90, color: "from-gray-700 to-gray-800" },
+        { name: "AWS", level: 89, color: "from-orange-500 to-yellow-500" },
+        { name: "Docker", level: 90, color: "from-blue-500 to-blue-600" },
+        { name: "Git/GitHub", level: 90, color: "from-gray-700 to-purple-800" },
         { name: "FastAPI", level: 85, color: "from-green-500 to-emerald-500" },
-        { name: "MLflow", level: 75, color: "from-purple-500 to-purple-600" },
+        { name: "MLflow", level: 80, color: "from-purple-500 to-purple-600" },
       ]
     }
   ];

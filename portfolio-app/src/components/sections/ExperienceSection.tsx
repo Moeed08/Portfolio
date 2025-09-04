@@ -54,7 +54,7 @@ const ExperienceSection: React.FC = () => {
       title: "Jr. AI Engineer",
       company: "MTBC CareCloud",
       location: "Islamabad, Pakistan",
-      period: "March 2024 - Present",
+      period: "June 2025 - Present",
       type: "Full-time",
       description: "Contributing to the development of AI-driven solutions and applications that support healthcare providers in improving patient care and operational efficiency.",
       achievements: [
@@ -70,7 +70,7 @@ const ExperienceSection: React.FC = () => {
       title: "AI Engineer Intern",
       company: "MTBC CareCloud", 
       location: "Islamabad, Pakistan",
-      period: "September 2023 - February 2024",
+      period: "March 2025 - June 2025",
       type: "Internship",
       description: "Developed and maintained OCR & RAG based pipelines that support healthcare document processing in TalkEHR platform.",
       achievements: [
