@@ -9,16 +9,26 @@ import PlaceholderImage from '../ui/PlaceholderImage';
 interface Project {
   title: string;
   description: string;
-  image: string;
+  image?: string;
   technologies: string[];
   category: string;
   date: string;
-  github: string;
-  live: string;
+  github?: string;
+  live?: string;
   featured: boolean;
 }
 
 const ProjectsSection: React.FC = () => {
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    // Fallback to ensure section becomes visible after a delay
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -43,68 +53,51 @@ const ProjectsSection: React.FC = () => {
 
   const projects = [
     {
-      title: "Student Information Chatbot using RAG",
-      description: "Built an intelligent conversational AI system using Retrieval-Augmented Generation (RAG) to provide accurate answers to student queries about university programs, admission processes, and academic services. Implemented advanced NLP techniques for context understanding.",
-      image: "chatbot",
-      technologies: ["Python", "LangChain", "OpenAI", "RAG", "Vector Database", "FastAPI", "NLP"],
-      category: "AI/ML",
-      date: "2024",
-      github: "https://github.com/moeedasif/student-chatbot-rag",
-      live: "",
+      title: "Final Year Project: Data Genie",
+      description: "A web based synthetic data generation tool for quality assurance and testing of textile fabric in the textile industry.",
+      image: "/images/data-genie.svg",
+      technologies: ["Python", "Stable Diffusion", "Computer Vision", "YOLO-V8", "Git", "MERN Stack", "NLP","Generative AI"],
+      category: "Personal Project",
+      date: "Sep 2024 - June 2025",
+      github: "https://github.com/Hammadqr/FYP-DataGenie",
       featured: true
     },
     {
-      title: "Healthcare Document Processing Pipeline",
+      title: "AI Powered TalkEHR's Document Processing Pipeline",
       description: "Developed and deployed OCR and RAG-based pipelines for TalkEHR at MTBC CareCloud, achieving 95% accuracy improvement in document classification and 90% faster processing speed. Automated healthcare document workflows using AI.",
-      image: "ocr",
-      technologies: ["Python", "Tesseract OCR", "Azure DevOps", "Gemini AI", "Machine Learning", "Computer Vision"],
-      category: "AI/ML",
-      date: "2024",
-      github: "",
-      live: "",
-      featured: true
-    },
-    {
-      title: "Machine Learning Model Deployment & MLOps",
-      description: "Designed end-to-end ML pipelines for healthcare AI solutions including automated model training, validation, and cloud deployment. Implemented MLOps practices for continuous integration and monitoring of AI models.",
-      image: "mlops",
-      technologies: ["Python", "TensorFlow", "PyTorch", "Docker", "AWS", "Azure", "MLflow", "CI/CD"],
-      category: "AI/ML",
-      date: "2024",
-      github: "",
-      live: "",
+      image: "/images/talkehr-pipeline.svg",
+      technologies: ["Python", "Tesseract OCR", "Azure DevOps", "Gemini AI", "Git", "NLP", "RAG","Docker","CI/CD","FastAPI"],
+      category: "Company Project",
+      date: "March 2025 - June 2025",
       featured: false
     },
     {
-      title: "Computer Vision & Image Processing System",
-      description: "Developed computer vision solutions for healthcare applications including medical image analysis and automated diagnosis support. Utilized deep learning models for image classification and object detection.",
-      image: "computer-vision",
-      technologies: ["Python", "OpenCV", "TensorFlow", "PyTorch", "Computer Vision", "Deep Learning"],
-      category: "AI/ML",
-      date: "2024",
-      github: "",
-      live: "",
+      title: "Automated Call Center",
+      description: "Integrated AI call center with Avaya communication platform, enabling real-time voice interactions, streamlining client support operations and reducing human agent workload.",
+      image: "/images/ai-call-center.svg",
+      technologies: ["Python", "Git", "OpenAI", "Azure DevOps", "FastAPI"],
+      category: "Company Project",
+      date: "June 2025 - Present",
       featured: false
     },
     {
-      title: "Data Structures & Algorithms Teaching Tools",
-      description: "Created interactive educational tools and visualizations for teaching data structures and algorithms to undergraduate students during lab assistant role at FAST University. Enhanced student learning through hands-on programming exercises.",
-      image: "algorithms",
-      technologies: ["C++", "Data Structures", "Algorithms", "OOP", "Educational Technology"],
-      category: "Education",
-      date: "2023",
-      github: "https://github.com/moeedasif/dsa-teaching-tools",
-      live: "",
+      title: "Pure Air AI",
+      description: "Developed and deployed a full-fledged real-time weather and air quality monitoring application on the AWS ecosystem, leveraging cloud services for scalable and reliable performance.",
+      image: "/images/pure-air-ai.svg",
+      technologies: ["Python", "LSTM", "PyTorch","Docker","MLflow","CI/CD","Git/Github","Deep Learning"],
+      category: "Personal Project",
+      date: "Nov 2024 - Jan 2025",
+      github: "https://github.com/Moeed08/Pollution-Prediction-in-time-series-using-LSTM",
       featured: false
     },
     {
-      title: "AI Portfolio Website",
-      description: "Modern, responsive portfolio website showcasing AI/ML projects and skills. Features dark mode, smooth animations, and optimized performance. Built with Next.js and modern web technologies.",
-      image: "portfolio",
-      technologies: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "React"],
-      category: "Frontend",
-      date: "2025",
-      github: "https://github.com/moeedasif/ai-portfolio",
+      title: "Text to Image Generation",
+      description: "Developed a text-to-image generation service using a gRPC backend and a Gradio frontend. The backend forwards prompts to a Hugging Face Space hosting a Stable Diffusion model, and the frontend provides a simple web interface for users to enter prompts and view the generated images.",
+      image: "/images/text-to-image.svg",
+      technologies: ["Python", "Stable Diffusion", "gRPC", "Gradio", "Docker", "NLP", "CI/CD"],
+      category: "Personal Project",
+      date: "April 2025 - May 2025",
+      github: "https://github.com/Moeed08/NLP-Project",
       live: "",
       featured: false
     }
@@ -120,80 +113,81 @@ const ProjectsSection: React.FC = () => {
     >
       {/* Featured Badge */}
       {project.featured && (
-        <div className="absolute top-4 left-4 z-10">
-          <span className="px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-semibold rounded-full">
+        <div className="absolute top-3 sm:top-4 left-3 sm:left-4 z-10">
+          <span className="px-2 sm:px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-semibold rounded-full">
             Featured
           </span>
         </div>
       )}
 
       {/* Project Image */}
-      <div className="relative overflow-hidden h-48 md:h-64">
+      <div className="relative overflow-hidden h-40 sm:h-48 md:h-56 lg:h-64">
         <PlaceholderImage
           width={600}
           height={400}
+          src={project.image}
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         {/* Overlay Links */}
-        <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute top-3 sm:top-4 right-3 sm:right-4 flex space-x-1 sm:space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <motion.a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors duration-300"
+            className="p-1.5 sm:p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors duration-300"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Github size={20} />
+            <Github size={16} className="sm:w-5 sm:h-5" />
           </motion.a>
           <motion.a
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors duration-300"
+            className="p-1.5 sm:p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors duration-300"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <ExternalLink size={20} />
+            <ExternalLink size={16} className="sm:w-5 sm:h-5" />
           </motion.a>
         </div>
       </div>
 
       {/* Project Content */}
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         {/* Category and Date */}
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center space-x-2">
-            <Tag size={16} className="text-blue-600 dark:text-blue-400" />
-            <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">
+        <div className="flex items-center justify-between mb-2 sm:mb-3 gap-2">
+          <div className="flex items-center space-x-1 sm:space-x-2">
+            <Tag size={14} className="sm:w-4 sm:h-4 text-blue-600 dark:text-blue-400" />
+            <span className="text-xs sm:text-sm text-blue-600 dark:text-blue-400 font-medium">
               {project.category}
             </span>
           </div>
           <div className="flex items-center space-x-1 text-gray-500 dark:text-gray-400">
-            <Calendar size={16} />
-            <span className="text-sm">{project.date}</span>
+            <Calendar size={14} className="sm:w-4 sm:h-4" />
+            <span className="text-xs sm:text-sm">{project.date}</span>
           </div>
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+        <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 line-clamp-2">
           {project.title}
         </h3>
 
         {/* Description */}
-        <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 line-clamp-3 leading-relaxed">
           {project.description}
         </p>
 
         {/* Technologies */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
           {project.technologies.map((tech: string) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded-full"
+              className="px-2 sm:px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded-full"
             >
               {tech}
             </span>
@@ -202,54 +196,60 @@ const ProjectsSection: React.FC = () => {
 
         {/* Action Buttons */}
         <div className="flex space-x-3">
-          <Button
-            variant="primary"
-            size="sm"
-            icon={ExternalLink}
-            href={project.live}
-            target="_blank"
-            className="flex-1"
-          >
-            Live Demo
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            icon={Github}
-            href={project.github}
-            target="_blank"
-            className="flex-1"
-          >
-            Code
-          </Button>
+          {project.live && (
+            <Button
+              variant="primary"
+              size="sm"
+              icon={ExternalLink}
+              href={project.live}
+              target="_blank"
+              className="flex-1"
+            >
+              Live Demo
+            </Button>
+          )}
+          {project.github && (
+            <Button
+              variant="outline"
+              size="sm"
+              icon={Github}
+              href={project.github}
+              target="_blank"
+              className="flex-1"
+            >
+              Code
+            </Button>
+          )}
         </div>
       </div>
     </motion.div>
   );
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.1, margin: "-50px" }}
+          onViewportEnter={() => setIsVisible(true)}
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <motion.div variants={itemVariants} className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
               <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
                 Featured Projects
               </span>
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4 sm:px-0">
               Here are some of the projects I&apos;ve worked on. Each one represents a unique challenge and learning experience.
             </p>
           </motion.div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {projects.map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />
             ))}
@@ -264,7 +264,7 @@ const ProjectsSection: React.FC = () => {
               variant="outline"
               size="lg"
               icon={Github}
-              href="https://github.com"
+              href="https://github.com/Moeed08"
               target="_blank"
             >
               View All Projects on GitHub

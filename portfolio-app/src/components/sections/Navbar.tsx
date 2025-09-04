@@ -64,11 +64,11 @@ const Navbar: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-14 sm:h-16">
           {/* Logo */}
           <motion.div
-            className="flex-shrink-0 flex items-center space-x-3"
+            className="flex-shrink-0 flex items-center space-x-2 sm:space-x-3"
             whileHover={{ scale: 1.05 }}
           >
             <a
@@ -77,16 +77,16 @@ const Navbar: React.FC = () => {
                 e.preventDefault();
                 handleNavClick('#home');
               }}
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-1 sm:space-x-2"
             >
               <Image
                 src="/logo.svg"
                 alt="MA Logo"
                 width={40}
                 height={40}
-                className="w-10 h-10"
+                className="w-8 h-8 sm:w-10 sm:h-10"
               />
-              <span className="text-xl font-bold text-gray-900 dark:text-white">
+              <span className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
                 Moeed Asif
               </span>
             </a>
@@ -116,25 +116,25 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Dark Mode Toggle & Mobile Menu Button */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <motion.button
               onClick={toggleDarkMode}
-              className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
+              className="p-1.5 sm:p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+              {darkMode ? <Sun size={18} className="sm:w-5 sm:h-5" /> : <Moon size={18} className="sm:w-5 sm:h-5" />}
             </motion.button>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
               <motion.button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
+                className="p-1.5 sm:p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
+                {isOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Menu size={20} className="sm:w-6 sm:h-6" />}
               </motion.button>
             </div>
           </div>

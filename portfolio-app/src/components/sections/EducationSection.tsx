@@ -222,35 +222,35 @@ const EducationSection: React.FC = () => {
   );
 
   return (
-    <section id="education" className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+    <section id="education" className="py-12 sm:py-16 lg:py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 opacity-50" />
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <motion.div
             variants={itemVariants}
             className="inline-block p-2 bg-green-100 dark:bg-green-900/30 rounded-lg mb-4"
           >
-            <GraduationCap className="w-8 h-8 text-green-600 dark:text-green-400" />
+            <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 dark:text-green-400" />
           </motion.div>
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+            className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4"
           >
             Education & 
             <span className="bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent"> Certifications</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4 sm:px-0"
           >
             Academic background and professional certifications in computer science and AI/ML
           </motion.p>

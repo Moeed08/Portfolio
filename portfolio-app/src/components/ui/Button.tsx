@@ -33,7 +33,7 @@ const Button: React.FC<ButtonProps> = ({
   rel,
   type = 'button',
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap';
+  const baseClasses = 'inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap text-center';
   
   const variantClasses = {
     primary: 'bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-500 shadow-lg hover:shadow-xl border border-transparent',
@@ -43,18 +43,18 @@ const Button: React.FC<ButtonProps> = ({
   };
   
   const sizeClasses = {
-    sm: 'px-3 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg',
+    sm: 'px-2 py-1.5 text-xs sm:px-3 sm:py-2 sm:text-sm',
+    md: 'px-4 py-2.5 text-sm sm:px-6 sm:py-3 sm:text-base',
+    lg: 'px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg',
   };
   
   const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
   
   const content = (
     <>
-      {Icon && iconPosition === 'left' && <Icon size={size === 'sm' ? 16 : size === 'md' ? 20 : 24} />}
+      {Icon && iconPosition === 'left' && <Icon size={size === 'sm' ? 14 : size === 'md' ? 18 : 20} className="sm:w-5 sm:h-5" />}
       <span>{children}</span>
-      {Icon && iconPosition === 'right' && <Icon size={size === 'sm' ? 16 : size === 'md' ? 20 : 24} />}
+      {Icon && iconPosition === 'right' && <Icon size={size === 'sm' ? 14 : size === 'md' ? 18 : 20} className="sm:w-5 sm:h-5" />}
     </>
   );
   
